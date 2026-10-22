@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.SpringVersion;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TrailService {
 
@@ -12,5 +14,9 @@ public class TrailService {
 
     public Trail createTrail(Trail trail) {
         return trailRepository.save(trail);
+    }
+
+    public List<Trail> getAllTrails() {
+        return (List<Trail>) trailRepository.findAll();
     }
 }
